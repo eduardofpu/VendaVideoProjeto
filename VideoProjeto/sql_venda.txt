@@ -1,0 +1,5 @@
+select nome_produto,quantidade * preco_compra as Total from produto;
+select quantidade * preco_compra as Total from produto;
+select sum(quantidade * preco_compra) as Total from produto
+select sum(quantidade * preco_compra*1.3) as Total from produto ;
+

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioDeCidade" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a884a09-5898-48ba-8b94-8e49955ba456">
+	<property name="template.type" value="columnar"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[select * from cidade]]>
+	</queryString>
+	<field name="id_cidade" class="java.lang.Integer"/>
+	<field name="nome_cidade" class="java.lang.String"/>
+	<group name="id_cidade">
+		<groupExpression><![CDATA[$F{id_cidade}]]></groupExpression>
+		<groupHeader>
+			<band height="31">
+				<frame>
+					<reportElement uuid="96f45379-059d-4924-9e9a-5ca7db396a54" mode="Opaque" x="0" y="7" width="555" height="24" forecolor="#B89F7D" backcolor="#9DB1B8"/>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement uuid="be16c464-0008-44b4-be5c-c3751a8cd443" style="SubTitle" isPrintRepeatedValues="false" x="2" y="1" width="479" height="23" forecolor="#FFFFFF"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{id_cidade}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="28">
+				<line>
+					<reportElement uuid="0ffe7c1b-236b-441c-89f3-405e57a38b6c" positionType="FixRelativeToBottom" x="2" y="26" width="551" height="1"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="nome_cidade">
+		<groupExpression><![CDATA[$F{nome_cidade}]]></groupExpression>
+		<groupHeader>
+			<band height="24">
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="1a8a92ef-3021-4494-8c98-f064562498a9" positionType="Float" x="0" y="4" width="299" height="20" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Times New Roman" size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nome_cidade}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50">
+			<staticText>
+				<reportElement uuid="83eb8513-e37b-46bc-89e4-420598f65838" x="39" y="0" width="474" height="50"/>
+				<textElement>
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[Relatório de Cidades]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<columnFooter>
+		<band height="4" splitType="Stretch">
+			<line>
+				<reportElement uuid="7eb4760e-e04c-45da-ab10-cd31c9a17b72" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

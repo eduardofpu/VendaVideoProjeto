@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatrorioPar" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6360e23e-06c0-454e-8f95-7bb771fbb6d4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from parcela_venda]]>
+	</queryString>
+	<field name="id_parc_venda" class="java.lang.Integer"/>
+	<field name="cod_venda" class="java.lang.Integer"/>
+	<field name="valor_parce" class="java.math.BigDecimal"/>
+	<field name="datavenc" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<group name="id_parc_venda">
+		<groupExpression><![CDATA[$F{id_parc_venda}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="26" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement uuid="4396963b-a0a1-4dd4-9bac-d73fbc52779a" x="395" y="15" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="3a481335-b062-4356-bd07-f834edebb71c" x="500" y="15" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2c6b3273-802d-4f04-ae2e-777d61a85ce2" x="19" y="2" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[id_parc_venda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e1afde6d-a034-4065-9b81-8160682d056b" x="140" y="2" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cod_venda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c9ca424-8957-465a-98e0-d13922dda7dd" x="253" y="2" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[valor_parce]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4ae91e13-0bc3-41de-af37-c55378a2fc10" x="375" y="2" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[datavenc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="02f7aa36-8460-477c-a942-7da09f02539c" x="486" y="2" width="36" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement uuid="8a899f26-9880-4aaa-b77f-29c3cba837ad" x="19" y="14" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{id_parc_venda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="50a91be8-dc16-4310-bf74-6707ce3c6202" x="140" y="13" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{cod_venda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="85c07f4f-94c9-412a-913c-431dce2a7a37" x="253" y="13" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{valor_parce}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dd324d83-0fa8-48aa-a033-2857f7739200" x="375" y="13" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{datavenc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f93ed18e-b77e-4aab-aefe-553fa2853d09" x="475" y="13" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="15" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement uuid="387da385-1a16-4faf-87f8-8938875662cd" x="420" y="12" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="25" splitType="Stretch"/>
+	</summary>
+</jasperReport>
